@@ -7,7 +7,7 @@ services:
       args:
         VERSION: ${VERSION}
         TARGETARCH: ${TARGETARCH}
-    image: jumpserver/jms_core:${VERSION}
+    image: jumpserver/core-ce:${VERSION}
     container_name: jms_core
     restart: always
     command: start web
@@ -40,7 +40,7 @@ services:
       - net
 
   celery:
-    image: jumpserver/jms_core:${VERSION}
+    image: jumpserver/core-ce:${VERSION}
     container_name: jms_celery
     restart: always
     command: start task
@@ -81,7 +81,7 @@ services:
       args:
         VERSION: ${VERSION}
         TARGETARCH: ${TARGETARCH}
-    image: jumpserver/jms_koko:${VERSION}
+    image: jumpserver/koko:${VERSION}
     container_name: jms_koko
     restart: always
     privileged: true
@@ -236,7 +236,7 @@ services:
       args:
         VERSION: ${VERSION}
         TARGETARCH: ${TARGETARCH}
-    image: jumpserver/jms_web:${VERSION}
+    image: jumpserver/web:${VERSION}
     container_name: jms_web
     restart: always
     environment:
